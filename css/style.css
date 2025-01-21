@@ -51,21 +51,24 @@ hr {
 #top {
     width: 100%;
     height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
     position: relative;
 }
 
 #logo {
     height: 130px;
     width: 160px;
-    float: left;
-    margin-left: 20px;
 }
 
 #meni {
-    height: 130px;
-    width: 1380px;
-    position: absolute;
-    left: 180px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto 0;
 }
 
 #meni ul {
@@ -79,7 +82,6 @@ hr {
 }
 
 #meni ul li {
-    float: left;
     height: 130px;
     width: 200px;
     text-align: center;
@@ -90,8 +92,6 @@ hr {
 
 #meni ul li a {
     color: white;
-    margin-left: 20px;
-    margin-right: 20px;
     text-decoration: none;
     cursor: pointer;
     position: relative;
@@ -127,22 +127,20 @@ hr {
 }
 
 #ico {
-    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Poravnava slik na desno */
+    gap: 20px; /* Razmik med ikonami */
     height: 130px;
-    width: 355px;
-    left: 1560px;
-    position: absolute;
-    line-height: 147px;
+    position: relative;
+    margin: 40px; /* Dodatni premik v desno */
 }
 
 #text {
-    min-width: 600px;
-    min-height: 600px;
-    position: absolute;
-    left: 0;
+    max-width: 600px;
+    position: relative;
     color: white;
-    padding-left: 40px;
-    padding-top: 220px;
+    padding: 220px 40px 0 40px;
     font-size: 20px;
 }
 
@@ -172,27 +170,62 @@ p {
 }
 
 #social {
-    min-height: 600px;
-    width: 200px;
-    position: absolute;
-    left: 1720px;
+    position: fixed; /* Naj bo vedno viden */
+    right: 20px;
+    top: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    top: 300px;
-}
-
-#y {
-    margin-left: -5px;
 }
 
 #footer {
     width: 100%;
-    min-height:100px;
+    min-height: 100px;
     background: linear-gradient(to top right, rgba(0, 0, 0, 0.7) 50%, transparent 50%);
     position: relative;
-    margin-top: 100px;   /* Pusti dovolj prostora za drsenje */
     text-align: center;
-    color:white;
+    color: white;
+    padding: 20px;
+}
+
+/* Dodaj medijske poizvedbe za odzivnost */
+@media (max-width: 1200px) {
+    #meni ul li {
+        width: 150px;
+        font-size: 20px;
+    }
+
+    #social {
+        top: auto;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #top {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 20px;
+    }
+
+    #meni ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #meni ul li {
+        width: auto;
+    }
+
+    #text {
+        padding: 40px;
+        font-size: 18px;
+    }
+
+    #button a {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
 }
