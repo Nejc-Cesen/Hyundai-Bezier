@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: url("../slike/background.jpg"); /* Ohranimo privzeto ozadje */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top right, rgba(0, 0, 0, 0.7) 50%, transparent 50%);
+    z-index: -1; /* Da ostane za vsebino */
+}
+
+hr {
+    border: 0;
+    height: 5px; /* Višina vijugaste črte */
+    background-image: linear-gradient(to bottom right, transparent, #000, transparent); /* Diagonalna vijugasta črta iz zgornjega levega v spodnji desni kot */
+    width: 100%;
+    position: absolute;
+    top: 50%; /* Črta na sredini zaslona */
+    left: 0;
+}
+
+#glavni{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#top {
+    width: 100%;
+    height: 130px;
+    position: relative;
+}
+
+#logo {
+    height: 130px;
+    width: 160px;
+    float: left;
+    margin-left: 20px;
+}
+
+#meni {
+    height: 130px;
+    width: 1380px;
+    position: absolute;
+    left: 180px; /* Adjust this value based on your logo width + margin */
+}
+
+#meni ul{
+    list-style: none;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    padding: 0;
+    margin: 0;
+}
+
+#meni ul li {
+    float: left;
+    height: 130px;
+    width: 200px;
+    text-align: center;
+    line-height: 130px;
+    font-size: 25px;
+    position: relative; /* Required for positioning the pseudo-element */
+}
+
+#meni ul li a {
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative; /* Allows stacking with the circle */
+    z-index: 2; /* Ensures text is fully above the circle */
+    background-color: transparent; /* Avoids blending */
+}
+
+#meni ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)); /* Neon black gradient */
+    border-radius: 50% / 60%; /* Makes it more oval */
+    transform: translate(-50%, -50%) scale(0); /* Centers and hides the oval */
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Smooth animation */
+    z-index: -1; /* Behind the text */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.9); /* Adds a glowing neon effect */
+    pointer-events: none; /* Prevents interactions */
+}
+
+#meni ul li a:hover::before {
+    width: 140px; /* Slightly wider for hover */
+    height: 70px; /* Adjust the height for the oval */
+    transform: translate(-50%, -50%) scale(1); /* Expands the oval */
+}
+
+#meni ul li a:hover {
+    color: white; /* Ensures the text remains white */
+    text-decoration: underline;
+}
+
+#ico{
+    float: left;
+    height:130px;
+    width:355px;
+    left:1560px;
+    position: absolute;
+    line-height: 147px;
+    float:right;
+}
+
+#text{
+    min-width:600px;
+    min-height: 600px;
+    position: absolute;
+    left: 0;
+    color: white;
+    padding-left: 40px;
+    padding-top: 220px;
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.3;
+}
+
+#button{
+ margin-top: 40px;
+}
+
+#button a {
+    display: inline-block;
+    padding: 20px 35px;
+    background-color: rgb(228, 213, 213);
+    color: rgb(14, 12, 12);
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Dodaj prehod za transformacijo */
+}
+
+#button a:hover {
+    transform: scale(1.1); /* Povečanje gumba ob premiku miške */
+}
+
+#social{
+    min-height:600px;
+    width: 200px;
+    position: absolute;
+    left:1720px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    top:300px;
+}
+
+#y {
+    margin-left: -5px; /* Zamakne sliko 'y' za 5px v levo */
+}
