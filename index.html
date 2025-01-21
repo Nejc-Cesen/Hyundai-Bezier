@@ -57,7 +57,7 @@
     </div>
 
     <script>
-        // Function to switch between PNG, SVG and Canvas
+        
         function toggleImage(type) {
             // Hide all images first
             document.getElementById('pngImage').style.display = 'none';
@@ -74,13 +74,13 @@
             }
         }
 
-        // Set default to show PNG on page load
+        
         window.onload = function() {
             toggleImage('png');
-            drawCanvas(); // Draw on the canvas as default
+            drawCanvas(); 
         }
 
-        // Function to draw on the canvas (Bezier curves)
+        
         function drawCanvas() {
             const canvas = document.getElementById('canvas');
     canvas.width = 130;
