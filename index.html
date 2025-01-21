@@ -31,7 +31,7 @@
                     <li><a href="#" onclick="toggleImage('png')">PNG</a></li>
                     <li><a href="#" onclick="toggleImage('svg')">SVG</a></li>
                     <li><a href="#" onclick="toggleImage('canvas')">BEZIER</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#footer" id="contact-link">Contact</a></li>
                 </ul>
             </div>
 
@@ -54,10 +54,22 @@
             <img id="y" src="slike/yt.png"  height="108" width="108" style="cursor:pointer;">
             <img id="i" src="slike/insta.png"  height="98" width="98" style="cursor:pointer;">
         </div>
+
+        
     </div>
+    <footer id="footer">
+        <p>Creator:<br>Nejc Česen, 4. Ra<br>Elektrotehniška in računalniška srednja šola<br>Nova Gorica</p>
+        <img id="ers" alt="school logo" src="slike/ers.png" height="100" width="100" style="margin-top: 5px;">
+    </footer>
+    
+    
 
     <script>
-        
+        document.getElementById("contact-link").addEventListener("click", function (event) {
+  event.preventDefault(); // Prepreči privzeto vedenje (skok na #footer)
+  document.getElementById("footer").scrollIntoView({ behavior: "smooth" });
+});
+        // Function to switch between PNG, SVG and Canvas
         function toggleImage(type) {
             // Hide all images first
             document.getElementById('pngImage').style.display = 'none';
@@ -74,13 +86,13 @@
             }
         }
 
-        
+        // Set default to show PNG on page load
         window.onload = function() {
             toggleImage('png');
-            drawCanvas(); 
+            drawCanvas(); // Draw on the canvas as default
         }
 
-        
+        // Function to draw on the canvas (Bezier curves)
         function drawCanvas() {
             const canvas = document.getElementById('canvas');
     canvas.width = 130;
