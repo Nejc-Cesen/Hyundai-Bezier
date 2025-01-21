@@ -187,7 +187,7 @@ p {
     margin-left: -5px;
 }
 
-footer {
+#footer {
     width: 100%;
     min-height:100px;
     background: linear-gradient(to top right, rgba(0, 0, 0, 0.7) 50%, transparent 50%);
